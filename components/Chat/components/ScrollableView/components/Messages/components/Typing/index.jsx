@@ -4,7 +4,6 @@ import { View, Animated } from 'react-native';
 import { styles } from './styles';
 
 const TWO_HUNDRED_MILLISECONDS = 200;
-const ONE_SECOND = 1500;
 
 function Typing() {
   const dots = [0, 1, 2].map((dotNumber) => useRef(new Animated.Value(dotNumber)).current);
@@ -49,7 +48,7 @@ function Typing() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       bounce();
-    }, ONE_SECOND);
+    }, 1200);
 
     return () => clearInterval(intervalId);
   }, []);

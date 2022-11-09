@@ -1,17 +1,24 @@
 import React from 'react';
 
 import { View } from 'react-native';
-import Typing from './components/Typing';
-import wrapMessage from './utils/wrapMessage';
+import messageComponentByType from './utils/messageComponentByType';
 
-function Message() {
-  const Message = wrapMessage(Typing);
+import { useMessages } from '../../../../../../context/Messages';
+
+function Messages() {
+  const { messages } = useMessages();
 
   return (
     <View>
-      <Message />
+      {messages.map((msg) => {
+        const Message = messageComponentByType(msg?.type);
+
+        return (
+          <Message message={msg.message} />
+        );
+      })}
     </View>
   );
 }
 
-export default Message;
+export default Messages;

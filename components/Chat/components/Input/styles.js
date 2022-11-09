@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     height: 64,
     padding: 20,
   },
-  image: {
+  icon: {
     width: 31,
     height: 28,
     position: 'absolute',
@@ -21,4 +21,7 @@ export const styles = StyleSheet.create({
       { translateY: 28 }
     ]
   },
+  image: {
+    flex: 1,
+  }
 });

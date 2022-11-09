@@ -15,13 +15,15 @@ export default (MessageComponent) => {
 
 const styles = StyleSheet.create({
   container: {
-    margin: 16,
+    marginTop: 16,
+    marginLeft: 16,
     backgroundColor: '#F3F5F9',
     borderTopRightRadius: 16,
     borderBottomEndRadius: 16,
     borderBottomStartRadius: 4,
     borderTopStartRadius: 16,
-    width: 227,
-    height: 76,
+    alignSelf: 'flex-start',
+    maxWidth: 227,
+    padding: 16,
   },
 });

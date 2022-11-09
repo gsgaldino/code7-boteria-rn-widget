@@ -8,6 +8,7 @@ import {
 import { Widget, Chat } from './components';
 
 import IsChatOpenProvider from './context/IsChatOpen';
+import MessagesProvider from './context/Messages';
 
 export default function App() {
   return (
@@ -15,13 +16,15 @@ export default function App() {
       <StatusBar barStyle={'dark-content'} />
 
       <IsChatOpenProvider>
-        <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-          style={styles.container}
-        >
-          <Widget />
-          <Chat />
-        </KeyboardAvoidingView>
+        <MessagesProvider>
+          <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            style={styles.container}
+          >
+            <Widget />
+            <Chat />
+          </KeyboardAvoidingView>
+        </MessagesProvider>
       </IsChatOpenProvider>
     </SafeAreaView>
   );
